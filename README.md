@@ -50,10 +50,11 @@ pip install django scikit-learn matplotlib pandas numpy
 ### Steps:  
 1. Clone the repository:  
 git clone https://github.com/SCIENTIST-VOOGLE-007/AgroVision.git
+
 cd AgroVision
-2. Start the Django server:  
+3. Start the Django server:  
 python manage.py runserver
-3. Open your browser and navigate to `http://127.0.0.1:8000/` to access the application.  
+4. Open your browser and navigate to `http://127.0.0.1:8000/` to access the application.  
 
 ---
 
