@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGROVISION - Graph Operations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Add custom styles for graph operations page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('green.jpg'); /* Add path to background image */
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Graph Operations</h1>
+        <ul>
+            <li><a href="?operation=spanning_tree">Spanning Trees</a></li>
+            <li><a href="?operation=prim_algorithm">Prim's Algorithm</a></li>
+            <li><a href="?operation=kruskal_algorithm">Kruskal's Algorithm</a></li>
+            <li><a href="?operation=distance_centrality">Distance Centrality</a></li>
+            <li><a href="?operation=isomorphic_graphs">Isomorphic Graphs</a></li>
+            <li><a href="?operation=incidence_matrix">Incidence Matrix</a></li>
+            <li><a href="?operation=adjacency_matrix">Adjacency Matrix</a></li>
+            <li><a href="?operation=cutsets">Cutsets</a></li>
+        </ul>
+
+        <!-- Display results of specific operations -->
+        {% if centrality is not None %}
+        <h2>Distance Centrality</h2>
+        <pre>{{ centrality }}</pre>
+        {% endif %}
+
+        {% if is_isomorphic is not None %}
+        <h2>Isomorphic Graphs</h2>
+        <p>{% if is_isomorphic %} The graphs are isomorphic. {% else %} The graphs are not isomorphic. {% endif %}</p>
+        {% endif %}
+
+        {% if incidence_matrix is not empty %}
+        <h2>Incidence Matrix</h2>
+        <pre>{{ incidence_matrix }}</pre>
+        {% endif %}
+
+        {% if adjacency_matrix is not empty %}
+        <h2>Adjacency Matrix</h2>
+        <pre>{{ adjacency_matrix }}</pre>
+        {% endif %}
+
+        {% if cut_sets is not None %}
+        <h2>Cutsets</h2>
+        <pre>{{ cut_sets }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
